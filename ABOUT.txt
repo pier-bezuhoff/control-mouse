@@ -1,0 +1,1 @@
+Program for eliminating monotonous keyboard and mouse actions.

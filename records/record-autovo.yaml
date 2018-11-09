@@ -1,0 +1,727 @@
+- {action: wait, time: 0.34569526700215647}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.4982558140036417}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.29582520199619466}
+- {action: key, key: Char.n, pressed: true}
+- {action: wait, time: 0.1168667660022038}
+- {action: key, key: Char.n, pressed: false}
+- {action: wait, time: 0.3044853730025352}
+- {action: key, key: Char.n, pressed: true}
+- {action: wait, time: 0.12335418799921172}
+- {action: key, key: Char.n, pressed: false}
+- {action: wait, time: 0.1665901979940827}
+- {action: key, key: Char.n, pressed: true}
+- {action: wait, time: 0.10445332600647816}
+- {action: key, key: Char.n, pressed: false}
+- {action: wait, time: 0.5289534839976113}
+- {action: key, key: Char.e, pressed: true}
+- {action: wait, time: 0.08605768699635519}
+- {action: key, key: Char.e, pressed: false}
+- {action: wait, time: 0.08356674000242492}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.13668743800371885}
+- {action: key, key: Key.enter, pressed: true}
+- {action: wait, time: 0.1270282249970478}
+- {action: key, key: Key.enter, pressed: false}
+- {action: wait, time: 0.364328736999596}
+- {action: key, key: Key.backspace, pressed: true}
+- {action: wait, time: 0.11128191500029061}
+- {action: key, key: Key.backspace, pressed: false}
+- {action: wait, time: 0.7800461709994124}
+- {action: key, key: Char.g, pressed: true}
+- {action: wait, time: 0.05533143800130347}
+- {action: key, key: Char.r, pressed: true}
+- {action: wait, time: 0.04594156199891586}
+- {action: key, key: Char.g, pressed: false}
+- {action: wait, time: 0.07449184599681757}
+- {action: key, key: Char.r, pressed: false}
+- {action: wait, time: 0.03252114100178005}
+- {action: key, key: Char.i, pressed: true}
+- {action: wait, time: 0.10030219799955375}
+- {action: key, key: Char.i, pressed: false}
+- {action: wait, time: 0.18092910099949222}
+- {action: key, key: Char.d, pressed: true}
+- {action: wait, time: 0.07799549600167666}
+- {action: key, key: Char.d, pressed: false}
+- {action: wait, time: 0.03853511100169271}
+- {action: key, key: Char.., pressed: true}
+- {action: wait, time: 0.12454760399850784}
+- {action: key, key: Char.., pressed: false}
+- {action: wait, time: 1.02766103400063}
+- {action: key, key: Key.shift_r, pressed: true}
+- {action: wait, time: 0.14211719299783}
+- {action: key, key: Char.S, pressed: true}
+- {action: wait, time: 0.0790765320052742}
+- {action: key, key: Char.S, pressed: false}
+- {action: wait, time: 0.04507837399432901}
+- {action: key, key: Key.shift_r, pressed: false}
+- {action: wait, time: 0.05909978900308488}
+- {action: key, key: Char.e, pressed: true}
+- {action: wait, time: 0.0998480810012552}
+- {action: key, key: Char.e, pressed: false}
+- {action: wait, time: 0.1830906760005746}
+- {action: key, key: Char.t, pressed: true}
+- {action: wait, time: 0.08121309299895074}
+- {action: key, key: Char.t, pressed: false}
+- {action: wait, time: 0.0907677959985449}
+- {action: key, key: Key.shift_r, pressed: true}
+- {action: wait, time: 0.11208524199901149}
+- {action: key, key: Char.L, pressed: true}
+- {action: wait, time: 0.13341639099962777}
+- {action: key, key: Char.L, pressed: false}
+- {action: wait, time: 0.05410523900354747}
+- {action: key, key: Key.shift_r, pressed: false}
+- {action: wait, time: 0.1428088940010639}
+- {action: key, key: Char.a, pressed: true}
+- {action: wait, time: 0.10827682799572358}
+- {action: key, key: Char.a, pressed: false}
+- {action: wait, time: 0.06750122099765576}
+- {action: key, key: Char.b, pressed: true}
+- {action: wait, time: 0.12169790700136218}
+- {action: key, key: Char.b, pressed: false}
+- {action: wait, time: 0.10202867900079582}
+- {action: key, key: Char.e, pressed: true}
+- {action: wait, time: 0.0461679770014598}
+- {action: key, key: Char.e, pressed: false}
+- {action: wait, time: 0.29355874299653806}
+- {action: key, key: Char.l, pressed: true}
+- {action: wait, time: 0.12224412000068696}
+- {action: key, key: Char.l, pressed: false}
+- {action: wait, time: 0.22509165000519715}
+- {action: key, key: Key.shift, pressed: true}
+- {action: wait, time: 0.3824204549964634}
+- {action: key, key: Char.(, pressed: true}
+- {action: wait, time: 0.12789768900256604}
+- {action: key, key: Char.(, pressed: false}
+- {action: wait, time: 0.115567809996719}
+- {action: key, key: Key.shift, pressed: false}
+- {action: wait, time: 0.22645757700229296}
+- {action: key, key: Key.shift_r, pressed: true}
+- {action: wait, time: 0.12249588499980746}
+- {action: key, key: Char.", pressed: true}
+- {action: wait, time: 0.14636093699664343}
+- {action: key, key: Char.", pressed: false}
+- {action: wait, time: 0.009283482002501842}
+- {action: key, key: Key.shift_r, pressed: false}
+- {action: wait, time: 1.3712026330031222}
+- {action: key, key: Key.shift_r, pressed: true}
+- {action: wait, time: 0.18949420099670533}
+- {action: key, key: Char.*, pressed: true}
+- {action: wait, time: 0.07483400699857157}
+- {action: key, key: Char.*, pressed: false}
+- {action: wait, time: 0.5129811720034922}
+- {action: key, key: Char.", pressed: true}
+- {action: wait, time: 0.1485922239953652}
+- {action: key, key: Char.", pressed: false}
+- {action: wait, time: 0.027990222006337717}
+- {action: key, key: Key.shift_r, pressed: false}
+- {action: wait, time: 0.22212324499560054}
+- {action: key, key: Key.shift, pressed: true}
+- {action: wait, time: 0.09093776900408557}
+- {action: key, key: Char.), pressed: true}
+- {action: wait, time: 0.12255705300049158}
+- {action: key, key: Char.), pressed: false}
+- {action: wait, time: 0.08521323499735445}
+- {action: key, key: Key.shift, pressed: false}
+- {action: wait, time: 0.302857718001178}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.1005477599974256}
+- {action: key, key: Char.x, pressed: true}
+- {action: wait, time: 0.10976705500070238}
+- {action: key, key: Char.s, pressed: true}
+- {action: wait, time: 0.10011032300099032}
+- {action: key, key: Char.x, pressed: false}
+- {action: wait, time: 0.047503873000096064}
+- {action: key, key: Char.s, pressed: false}
+- {action: wait, time: 0.07890725499601103}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.03821293700457318}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.029043700997135602}
+- {action: key, key: Key.alt, pressed: true}
+- {action: wait, time: 0.12174255600257311}
+- {action: key, key: Key.right, pressed: true}
+- {action: wait, time: 0.1400560999973095}
+- {action: key, key: Key.right, pressed: false}
+- {action: wait, time: 0.08033110600081272}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.0003130190016236156}
+- {action: key, key: Key.alt, pressed: false}
+- {action: wait, time: 0.18160573700151872}
+- {action: motion, x: 1090, y: 388}
+- {action: wait, time: 0.009704232994408812}
+- {action: motion, x: 1075, y: 388}
+- {action: wait, time: 0.01005477100261487}
+- {action: motion, x: 1046, y: 388}
+- {action: wait, time: 0.009801082997000776}
+- {action: motion, x: 1009, y: 388}
+- {action: wait, time: 0.010156427000765689}
+- {action: motion, x: 972, y: 401}
+- {action: wait, time: 0.00977159000467509}
+- {action: motion, x: 929, y: 420}
+- {action: wait, time: 0.0103844859986566}
+- {action: motion, x: 883, y: 439}
+- {action: wait, time: 0.009718754001369234}
+- {action: motion, x: 841, y: 461}
+- {action: wait, time: 0.010066131995699834}
+- {action: motion, x: 792, y: 488}
+- {action: wait, time: 0.008995768999739084}
+- {action: motion, x: 748, y: 514}
+- {action: wait, time: 0.010916001003351994}
+- {action: motion, x: 712, y: 543}
+- {action: wait, time: 0.009154624996881466}
+- {action: motion, x: 675, y: 571}
+- {action: wait, time: 0.009730941004818305}
+- {action: motion, x: 642, y: 593}
+- {action: wait, time: 0.01018950099387439}
+- {action: motion, x: 616, y: 613}
+- {action: wait, time: 0.009578521006915253}
+- {action: motion, x: 598, y: 631}
+- {action: wait, time: 0.010550789993430953}
+- {action: motion, x: 585, y: 645}
+- {action: wait, time: 0.00958581000304548}
+- {action: motion, x: 576, y: 654}
+- {action: wait, time: 0.009276056996895932}
+- {action: motion, x: 573, y: 659}
+- {action: wait, time: 0.010422507002658676}
+- {action: motion, x: 571, y: 661}
+- {action: wait, time: 0.00978536900220206}
+- {action: motion, x: 571, y: 662}
+- {action: wait, time: 0.009515181001916062}
+- {action: motion, x: 571, y: 663}
+- {action: wait, time: 0.01978748699912103}
+- {action: motion, x: 571, y: 664}
+- {action: wait, time: 0.010353674995712936}
+- {action: motion, x: 571, y: 665}
+- {action: wait, time: 0.009633440000470728}
+- {action: motion, x: 571, y: 666}
+- {action: wait, time: 0.009770989003300201}
+- {action: motion, x: 571, y: 666}
+- {action: wait, time: 0.009626002996810712}
+- {action: motion, x: 571, y: 667}
+- {action: wait, time: 0.07942335500410991}
+- {action: motion, x: 571, y: 667}
+- {action: wait, time: 0.009277092998672742}
+- {action: motion, x: 571, y: 670}
+- {action: wait, time: 0.33840631500061136}
+- {action: mouse, button: Button.left, pressed: true, x: 571, y: 670}
+- {action: wait, time: 0.10041296299459646}
+- {action: mouse, button: Button.left, pressed: false, x: 571, y: 670}
+- {action: wait, time: 0.05921905300056096}
+- {action: mouse, button: Button.left, pressed: true, x: 571, y: 670}
+- {action: wait, time: 0.024086374003672972}
+- {action: mouse, button: Button.left, pressed: false, x: 571, y: 670}
+- {action: wait, time: 0.6825947300021653}
+- {action: motion, x: 571, y: 655}
+- {action: wait, time: 0.009734337996633258}
+- {action: motion, x: 571, y: 635}
+- {action: wait, time: 0.00988475500344066}
+- {action: motion, x: 571, y: 608}
+- {action: wait, time: 0.009762544999830425}
+- {action: motion, x: 571, y: 590}
+- {action: wait, time: 0.010241222997137811}
+- {action: motion, x: 571, y: 579}
+- {action: wait, time: 0.009442032001970802}
+- {action: motion, x: 571, y: 577}
+- {action: wait, time: 0.010482552999746986}
+- {action: motion, x: 571, y: 575}
+- {action: wait, time: 0.009806949994526803}
+- {action: motion, x: 571, y: 575}
+- {action: wait, time: 0.019461813004454598}
+- {action: motion, x: 571, y: 574}
+- {action: wait, time: 0.03934711699548643}
+- {action: motion, x: 571, y: 574}
+- {action: wait, time: 0.07894120000128169}
+- {action: motion, x: 572, y: 574}
+- {action: wait, time: 0.010445733001688495}
+- {action: motion, x: 574, y: 574}
+- {action: wait, time: 0.027730431997042615}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.37344837999989977}
+- {action: key, key: Char.q, pressed: true}
+- {action: wait, time: 0.14374259000032907}
+- {action: key, key: Char.q, pressed: false}
+- {action: wait, time: 0.15305119200638728}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.29837409099854995}
+- {action: motion, x: 574, y: 573}
+- {action: wait, time: 0.00999250500171911}
+- {action: motion, x: 574, y: 569}
+- {action: wait, time: 0.010071116994367912}
+- {action: motion, x: 574, y: 559}
+- {action: wait, time: 0.00969748700299533}
+- {action: motion, x: 572, y: 540}
+- {action: wait, time: 0.009866954998869915}
+- {action: motion, x: 564, y: 509}
+- {action: wait, time: 0.010392992000561208}
+- {action: motion, x: 554, y: 468}
+- {action: wait, time: 0.010197725998295937}
+- {action: motion, x: 547, y: 425}
+- {action: wait, time: 0.00939643200399587}
+- {action: motion, x: 541, y: 379}
+- {action: wait, time: 0.009429870995518286}
+- {action: motion, x: 535, y: 339}
+- {action: wait, time: 0.009979391004890203}
+- {action: motion, x: 531, y: 308}
+- {action: wait, time: 0.009959701994375791}
+- {action: motion, x: 531, y: 281}
+- {action: wait, time: 0.010057809005957097}
+- {action: motion, x: 531, y: 261}
+- {action: wait, time: 0.01041196299775038}
+- {action: motion, x: 531, y: 249}
+- {action: wait, time: 0.00935195400234079}
+- {action: motion, x: 531, y: 239}
+- {action: wait, time: 0.00985114499781048}
+- {action: motion, x: 531, y: 237}
+- {action: wait, time: 0.00975878699682653}
+- {action: motion, x: 531, y: 235}
+- {action: wait, time: 0.01577837300283136}
+- {action: motion, x: 531, y: 233}
+- {action: wait, time: 0.003989286000432912}
+- {action: motion, x: 531, y: 233}
+- {action: wait, time: 0.009946587997546885}
+- {action: motion, x: 531, y: 231}
+- {action: wait, time: 0.009723570998176001}
+- {action: motion, x: 532, y: 230}
+- {action: wait, time: 0.010247942002024502}
+- {action: motion, x: 534, y: 228}
+- {action: wait, time: 0.009533208001812454}
+- {action: motion, x: 537, y: 226}
+- {action: wait, time: 0.010334366997994948}
+- {action: motion, x: 539, y: 225}
+- {action: wait, time: 0.009585724998032674}
+- {action: motion, x: 542, y: 223}
+- {action: wait, time: 0.009674225002527237}
+- {action: motion, x: 546, y: 221}
+- {action: wait, time: 0.010515223002585117}
+- {action: motion, x: 551, y: 220}
+- {action: wait, time: 0.010399694998341147}
+- {action: motion, x: 558, y: 218}
+- {action: wait, time: 0.008645465997688007}
+- {action: motion, x: 565, y: 215}
+- {action: wait, time: 0.00980860100389691}
+- {action: motion, x: 572, y: 212}
+- {action: wait, time: 0.010384622997662518}
+- {action: motion, x: 577, y: 211}
+- {action: wait, time: 0.009582735001458786}
+- {action: motion, x: 580, y: 210}
+- {action: wait, time: 0.009922170000209007}
+- {action: motion, x: 582, y: 210}
+- {action: wait, time: 0.011950408996199258}
+- {action: motion, x: 583, y: 210}
+- {action: wait, time: 0.007283425999048632}
+- {action: motion, x: 584, y: 210}
+- {action: wait, time: 0.020098045002669096}
+- {action: motion, x: 584, y: 211}
+- {action: wait, time: 0.009664231998613104}
+- {action: motion, x: 584, y: 213}
+- {action: wait, time: 0.010270999999193009}
+- {action: motion, x: 584, y: 216}
+- {action: wait, time: 0.010586171003524214}
+- {action: motion, x: 584, y: 220}
+- {action: wait, time: 0.49101256400172133}
+- {action: motion, x: 586, y: 220}
+- {action: wait, time: 0.023562895999930333}
+- {action: motion, x: 588, y: 220}
+- {action: wait, time: 0.01952866899955552}
+- {action: motion, x: 591, y: 224}
+- {action: wait, time: 0.02132741799869109}
+- {action: motion, x: 593, y: 229}
+- {action: wait, time: 0.016395589998865034}
+- {action: motion, x: 596, y: 235}
+- {action: wait, time: 0.02539300200442085}
+- {action: motion, x: 597, y: 238}
+- {action: wait, time: 0.020211810995533597}
+- {action: motion, x: 597, y: 240}
+- {action: wait, time: 0.01619156199740246}
+- {action: motion, x: 597, y: 241}
+- {action: wait, time: 0.03824070600239793}
+- {action: motion, x: 593, y: 241}
+- {action: wait, time: 0.019703563004441094}
+- {action: motion, x: 587, y: 236}
+- {action: wait, time: 0.020449396994081326}
+- {action: motion, x: 573, y: 224}
+- {action: wait, time: 0.020675858002505265}
+- {action: motion, x: 555, y: 211}
+- {action: wait, time: 0.02109594299690798}
+- {action: motion, x: 540, y: 200}
+- {action: wait, time: 0.02018080100242514}
+- {action: motion, x: 529, y: 194}
+- {action: wait, time: 0.02056082500348566}
+- {action: motion, x: 522, y: 190}
+- {action: wait, time: 0.020475394994718954}
+- {action: motion, x: 517, y: 189}
+- {action: wait, time: 0.01834873800544301}
+- {action: motion, x: 513, y: 189}
+- {action: wait, time: 0.02044821599702118}
+- {action: motion, x: 511, y: 189}
+- {action: wait, time: 0.020370591002574656}
+- {action: motion, x: 508, y: 189}
+- {action: wait, time: 0.020494566000706982}
+- {action: motion, x: 507, y: 189}
+- {action: wait, time: 0.02043707499979064}
+- {action: motion, x: 505, y: 189}
+- {action: wait, time: 0.011028410997823812}
+- {action: motion, x: 503, y: 189}
+- {action: wait, time: 0.021313004996045493}
+- {action: motion, x: 502, y: 189}
+- {action: wait, time: 0.009395279004820623}
+- {action: motion, x: 502, y: 189}
+- {action: wait, time: 0.010165316001803149}
+- {action: motion, x: 501, y: 189}
+- {action: wait, time: 0.013478475993906613}
+- {action: motion, x: 501, y: 189}
+- {action: wait, time: 0.04296630799944978}
+- {action: mouse, button: Button.left, pressed: true, x: 501, y: 189}
+- {action: wait, time: 0.016731761003029533}
+- {action: mouse, button: Button.left, pressed: false, x: 501, y: 189}
+- {action: wait, time: 0.02521921200241195}
+- {action: motion, x: 501, y: 190}
+- {action: wait, time: 0.046322080997924786}
+- {action: motion, x: 501, y: 191}
+- {action: wait, time: 0.0001815249997889623}
+- {action: motion, x: 501, y: 191}
+- {action: wait, time: 0.00015283600077964365}
+- {action: motion, x: 501, y: 192}
+- {action: wait, time: 0.00019892199634341523}
+- {action: motion, x: 501, y: 193}
+- {action: wait, time: 0.002752432999841403}
+- {action: motion, x: 501, y: 193}
+- {action: wait, time: 0.010284920004778542}
+- {action: motion, x: 501, y: 194}
+- {action: wait, time: 0.008848320998367853}
+- {action: motion, x: 501, y: 195}
+- {action: wait, time: 0.010757151998404879}
+- {action: motion, x: 502, y: 195}
+- {action: wait, time: 0.00956759700056864}
+- {action: motion, x: 502, y: 197}
+- {action: wait, time: 0.009814411001570988}
+- {action: motion, x: 503, y: 199}
+- {action: wait, time: 0.009487607996561565}
+- {action: motion, x: 503, y: 202}
+- {action: wait, time: 0.009919695999997202}
+- {action: motion, x: 504, y: 205}
+- {action: wait, time: 0.010383115004515275}
+- {action: motion, x: 504, y: 209}
+- {action: wait, time: 0.00959964999492513}
+- {action: motion, x: 505, y: 213}
+- {action: wait, time: 0.010397871999884956}
+- {action: motion, x: 506, y: 219}
+- {action: wait, time: 0.008924163004849106}
+- {action: motion, x: 508, y: 224}
+- {action: wait, time: 0.010362044995417818}
+- {action: motion, x: 509, y: 231}
+- {action: wait, time: 0.010009568999521434}
+- {action: motion, x: 511, y: 237}
+- {action: wait, time: 0.009259612001187634}
+- {action: motion, x: 515, y: 242}
+- {action: wait, time: 0.009537883001030423}
+- {action: motion, x: 518, y: 248}
+- {action: wait, time: 0.010864511998079251}
+- {action: motion, x: 521, y: 253}
+- {action: wait, time: 0.009603762002370786}
+- {action: motion, x: 527, y: 257}
+- {action: wait, time: 0.00997493199974997}
+- {action: motion, x: 532, y: 262}
+- {action: wait, time: 0.009371050000481773}
+- {action: motion, x: 539, y: 264}
+- {action: wait, time: 0.010262877003697213}
+- {action: motion, x: 546, y: 265}
+- {action: wait, time: 0.009915208000165876}
+- {action: motion, x: 553, y: 267}
+- {action: wait, time: 0.009968316997401416}
+- {action: motion, x: 560, y: 267}
+- {action: wait, time: 0.008895159000530839}
+- {action: motion, x: 568, y: 267}
+- {action: wait, time: 0.011038719996577129}
+- {action: motion, x: 575, y: 267}
+- {action: wait, time: 0.009932348999427631}
+- {action: motion, x: 580, y: 267}
+- {action: wait, time: 0.009408719000930432}
+- {action: motion, x: 586, y: 267}
+- {action: wait, time: 0.009413750005478505}
+- {action: motion, x: 590, y: 267}
+- {action: wait, time: 0.010452870999870356}
+- {action: motion, x: 594, y: 267}
+- {action: wait, time: 0.009844465996138752}
+- {action: motion, x: 598, y: 267}
+- {action: wait, time: 0.009499537001829594}
+- {action: motion, x: 599, y: 267}
+- {action: wait, time: 0.009933510002156254}
+- {action: motion, x: 600, y: 267}
+- {action: wait, time: 0.009896334995573852}
+- {action: motion, x: 600, y: 266}
+- {action: wait, time: 0.010193048001383431}
+- {action: motion, x: 601, y: 266}
+- {action: wait, time: 0.01859476899699075}
+- {action: motion, x: 601, y: 266}
+- {action: wait, time: 0.2482091960046091}
+- {action: motion, x: 600, y: 266}
+- {action: wait, time: 0.010319335000531282}
+- {action: motion, x: 598, y: 266}
+- {action: wait, time: 0.008997090000775643}
+- {action: motion, x: 596, y: 266}
+- {action: wait, time: 0.009229106995917391}
+- {action: motion, x: 594, y: 266}
+- {action: wait, time: 0.01108949800254777}
+- {action: motion, x: 591, y: 266}
+- {action: wait, time: 0.009940872994775418}
+- {action: motion, x: 588, y: 264}
+- {action: wait, time: 0.009254731005057693}
+- {action: motion, x: 585, y: 260}
+- {action: wait, time: 0.00978665599541273}
+- {action: motion, x: 575, y: 251}
+- {action: wait, time: 0.010566416000074241}
+- {action: motion, x: 543, y: 228}
+- {action: wait, time: 0.009828479000134394}
+- {action: motion, x: 507, y: 194}
+- {action: wait, time: 0.009865719002846163}
+- {action: motion, x: 468, y: 159}
+- {action: wait, time: 0.00871565400302643}
+- {action: motion, x: 434, y: 126}
+- {action: wait, time: 0.01117503599380143}
+- {action: motion, x: 407, y: 95}
+- {action: wait, time: 0.010117523001099471}
+- {action: motion, x: 382, y: 70}
+- {action: wait, time: 0.00884354400477605}
+- {action: motion, x: 363, y: 50}
+- {action: wait, time: 0.009233384997060057}
+- {action: motion, x: 348, y: 35}
+- {action: wait, time: 0.01291134500206681}
+- {action: motion, x: 337, y: 26}
+- {action: wait, time: 0.007715501000348013}
+- {action: motion, x: 331, y: 22}
+- {action: wait, time: 0.009804989997064695}
+- {action: motion, x: 328, y: 21}
+- {action: wait, time: 0.009969559003366157}
+- {action: motion, x: 327, y: 20}
+- {action: wait, time: 0.009794626996153966}
+- {action: motion, x: 326, y: 20}
+- {action: wait, time: 0.13866154000425013}
+- {action: motion, x: 326, y: 19}
+- {action: wait, time: 0.008730761997867376}
+- {action: motion, x: 326, y: 18}
+- {action: wait, time: 0.010593061997496989}
+- {action: motion, x: 326, y: 16}
+- {action: wait, time: 0.010622909998346586}
+- {action: motion, x: 326, y: 15}
+- {action: wait, time: 0.0088744280001265}
+- {action: motion, x: 326, y: 14}
+- {action: wait, time: 0.009160655004961882}
+- {action: motion, x: 325, y: 14}
+- {action: wait, time: 0.011080486998253036}
+- {action: motion, x: 324, y: 14}
+- {action: wait, time: 0.00990496099984739}
+- {action: motion, x: 321, y: 14}
+- {action: wait, time: 0.009446014999412}
+- {action: motion, x: 319, y: 14}
+- {action: wait, time: 0.009908539002935868}
+- {action: motion, x: 316, y: 14}
+- {action: wait, time: 0.00960040399513673}
+- {action: motion, x: 313, y: 14}
+- {action: wait, time: 0.010450756999489386}
+- {action: motion, x: 310, y: 13}
+- {action: wait, time: 0.009934281006280798}
+- {action: motion, x: 306, y: 13}
+- {action: wait, time: 0.008685110995429568}
+- {action: motion, x: 301, y: 12}
+- {action: wait, time: 0.01091235299827531}
+- {action: motion, x: 295, y: 12}
+- {action: wait, time: 0.010526014004426543}
+- {action: motion, x: 289, y: 11}
+- {action: wait, time: 0.008990472997538745}
+- {action: motion, x: 281, y: 10}
+- {action: wait, time: 0.009339752003143076}
+- {action: motion, x: 273, y: 10}
+- {action: wait, time: 0.011339040996972471}
+- {action: motion, x: 264, y: 10}
+- {action: wait, time: 0.009271545000956394}
+- {action: motion, x: 256, y: 10}
+- {action: wait, time: 0.009425652999198064}
+- {action: motion, x: 248, y: 9}
+- {action: wait, time: 0.010025704999861773}
+- {action: motion, x: 240, y: 7}
+- {action: wait, time: 0.009881268000754062}
+- {action: motion, x: 234, y: 6}
+- {action: wait, time: 0.010209047002717853}
+- {action: motion, x: 228, y: 3}
+- {action: wait, time: 0.027798037001048215}
+- {action: motion, x: 225, y: 1}
+- {action: wait, time: 0.00027646399394143373}
+- {action: motion, x: 224, y: 0}
+- {action: wait, time: 0.001306738005951047}
+- {action: motion, x: 220, y: 0}
+- {action: wait, time: 0.010579209993011318}
+- {action: motion, x: 218, y: 0}
+- {action: wait, time: 0.008841108006890863}
+- {action: motion, x: 218, y: 0}
+- {action: wait, time: 0.009253178999642842}
+- {action: motion, x: 218, y: 0}
+- {action: wait, time: 0.01102436899964232}
+- {action: motion, x: 218, y: 0}
+- {action: wait, time: 0.13456598999619018}
+- {action: mouse, button: Button.left, pressed: true, x: 218, y: 0}
+- {action: wait, time: 0.023499112998251803}
+- {action: motion, x: 217, y: 0}
+- {action: wait, time: 0.009847376000834629}
+- {action: motion, x: 217, y: 0}
+- {action: wait, time: 0.009912736000842415}
+- {action: motion, x: 217, y: 0}
+- {action: wait, time: 0.0003400210043764673}
+- {action: mouse, button: Button.left, pressed: false, x: 217, y: 0}
+- {action: wait, time: 0.008374107994313817}
+- {action: motion, x: 217, y: 0}
+- {action: wait, time: 0.0994601540005533}
+- {action: motion, x: 217, y: 0}
+- {action: wait, time: 0.009989155005314387}
+- {action: motion, x: 217, y: 0}
+- {action: wait, time: 0.008903034999093506}
+- {action: motion, x: 219, y: 1}
+- {action: wait, time: 0.010824509998201393}
+- {action: motion, x: 222, y: 3}
+- {action: wait, time: 0.010053197001980152}
+- {action: motion, x: 224, y: 6}
+- {action: wait, time: 0.009599076998711098}
+- {action: motion, x: 228, y: 11}
+- {action: wait, time: 0.009513655000773724}
+- {action: motion, x: 234, y: 19}
+- {action: wait, time: 0.010606960000586696}
+- {action: motion, x: 241, y: 27}
+- {action: wait, time: 0.00958127599733416}
+- {action: motion, x: 251, y: 35}
+- {action: wait, time: 0.009953013999620453}
+- {action: motion, x: 259, y: 44}
+- {action: wait, time: 0.009729151002829894}
+- {action: motion, x: 269, y: 53}
+- {action: wait, time: 0.00958263599750353}
+- {action: motion, x: 277, y: 61}
+- {action: wait, time: 0.010798249000799842}
+- {action: motion, x: 286, y: 70}
+- {action: wait, time: 0.009938796996721067}
+- {action: motion, x: 295, y: 76}
+- {action: wait, time: 0.008448418004263658}
+- {action: motion, x: 305, y: 82}
+- {action: wait, time: 0.010677865000616293}
+- {action: motion, x: 314, y: 89}
+- {action: wait, time: 0.011100290998001583}
+- {action: motion, x: 325, y: 95}
+- {action: wait, time: 0.008096940000541508}
+- {action: motion, x: 341, y: 103}
+- {action: wait, time: 0.00943670600099722}
+- {action: motion, x: 362, y: 115}
+- {action: wait, time: 0.2779531609994592}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.32179136899503646}
+- {action: key, key: Char.q, pressed: true}
+- {action: wait, time: 0.10674977400049102}
+- {action: key, key: Char.q, pressed: false}
+- {action: wait, time: 0.08172090600419324}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 2.067592063001939}
+- {action: key, key: Char.d, pressed: true}
+- {action: wait, time: 0.11357757499354193}
+- {action: key, key: Char.d, pressed: false}
+- {action: wait, time: 0.9779756940042716}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.3801545210008044}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.32478981299937004}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.19432686700019985}
+- {action: key, key: Key.esc, pressed: true}
+- {action: wait, time: 0.18913872999837622}
+- {action: key, key: Key.esc, pressed: false}
+- {action: wait, time: 0.010690686998714227}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.7294284150048043}
+- {action: motion, x: 362, y: 115}
+- {action: wait, time: 0.009689667997008655}
+- {action: motion, x: 361, y: 115}
+- {action: wait, time: 0.010002112001529895}
+- {action: motion, x: 361, y: 115}
+- {action: wait, time: 0.00992869299807353}
+- {action: motion, x: 360, y: 115}
+- {action: wait, time: 0.009281036996981129}
+- {action: motion, x: 360, y: 120}
+- {action: wait, time: 0.011324536004394758}
+- {action: motion, x: 360, y: 138}
+- {action: wait, time: 0.008801967000181321}
+- {action: motion, x: 360, y: 179}
+- {action: wait, time: 0.009179845998005476}
+- {action: motion, x: 360, y: 233}
+- {action: wait, time: 0.011451411002781242}
+- {action: motion, x: 365, y: 288}
+- {action: wait, time: 0.009429828998690937}
+- {action: motion, x: 373, y: 343}
+- {action: wait, time: 0.008708904999366496}
+- {action: motion, x: 378, y: 380}
+- {action: wait, time: 0.010986818997480441}
+- {action: motion, x: 383, y: 406}
+- {action: wait, time: 0.010479964003025088}
+- {action: motion, x: 387, y: 420}
+- {action: wait, time: 0.009104111995839048}
+- {action: motion, x: 387, y: 425}
+- {action: wait, time: 0.01008460100274533}
+- {action: motion, x: 388, y: 428}
+- {action: wait, time: 0.009444119001273066}
+- {action: motion, x: 388, y: 429}
+- {action: wait, time: 0.020583721998264082}
+- {action: motion, x: 388, y: 429}
+- {action: wait, time: 0.009548423004162032}
+- {action: motion, x: 388, y: 429}
+- {action: wait, time: 0.008836798995616846}
+- {action: motion, x: 388, y: 429}
+- {action: wait, time: 0.011769791002734564}
+- {action: motion, x: 389, y: 429}
+- {action: wait, time: 0.009038151998538524}
+- {action: motion, x: 390, y: 429}
+- {action: wait, time: 0.008655117999296635}
+- {action: motion, x: 390, y: 429}
+- {action: wait, time: 0.010500645003048703}
+- {action: motion, x: 393, y: 429}
+- {action: wait, time: 0.01003437300096266}
+- {action: motion, x: 396, y: 429}
+- {action: wait, time: 0.008502568998665083}
+- {action: motion, x: 399, y: 429}
+- {action: wait, time: 0.24900177300150972}
+- {action: scroll, dx: 0, dy: -1, x: 399, y: 429}
+- {action: wait, time: 0.01919750699744327}
+- {action: scroll, dx: 0, dy: -1, x: 399, y: 429}
+- {action: wait, time: 0.029808384999341797}
+- {action: scroll, dx: 0, dy: -1, x: 399, y: 429}
+- {action: wait, time: 0.22612847200070973}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.010847222001757473}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.011110110994195566}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.008273850005934946}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.009889379995001946}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.01033059000474168}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.00892760799615644}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.010658977000275627}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.00972999299847288}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.019421623001107946}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 0.01905623000493506}
+- {action: scroll, dx: 0, dy: 1, x: 399, y: 429}
+- {action: wait, time: 1.1267804989984143}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.28362578700034646}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.3033726809953805}
+- {action: key, key: Key.ctrl, pressed: true}
+- {action: wait, time: 0.08878417300002184}
+- {action: key, key: Key.esc, pressed: true}
+- {action: wait, time: 0.2634819710001466}
+- {action: key, key: Key.ctrl, pressed: false}
+- {action: wait, time: 0.01289272199937841}
+- {action: key, key: Key.esc, pressed: false}
+- {action: wait, time: 1.9633960780047346}

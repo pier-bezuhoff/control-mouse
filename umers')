@@ -1,0 +1,280 @@
+[0;31mType:[0m        module
+[0;31mString form:[0m <module 'pynput._util' from '/home/vanfed/anaconda3/lib/python3.6/site-packages/pynput/_util/__init__.py'>
+[0;31mFile:[0m        ~/anaconda3/lib/python3.6/site-packages/pynput/_util/__init__.py
+[0;31mSource:[0m     
+[0;31m# coding=utf-8[0m[0;34m[0m
+[0;34m[0m[0;31m# pynput[0m[0;34m[0m
+[0;34m[0m[0;31m# Copyright (C) 2015-2017 Moses Palmér[0m[0;34m[0m
+[0;34m[0m[0;31m#[0m[0;34m[0m
+[0;34m[0m[0;31m# This program is free software: you can redistribute it and/or modify it under[0m[0;34m[0m
+[0;34m[0m[0;31m# the terms of the GNU Lesser General Public License as published by the Free[0m[0;34m[0m
+[0;34m[0m[0;31m# Software Foundation, either version 3 of the License, or (at your option) any[0m[0;34m[0m
+[0;34m[0m[0;31m# later version.[0m[0;34m[0m
+[0;34m[0m[0;31m#[0m[0;34m[0m
+[0;34m[0m[0;31m# This program is distributed in the hope that it will be useful, but WITHOUT[0m[0;34m[0m
+[0;34m[0m[0;31m# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS[0m[0;34m[0m
+[0;34m[0m[0;31m# FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more[0m[0;34m[0m
+[0;34m[0m[0;31m# details.[0m[0;34m[0m
+[0;34m[0m[0;31m#[0m[0;34m[0m
+[0;34m[0m[0;31m# You should have received a copy of the GNU Lesser General Public License[0m[0;34m[0m
+[0;34m[0m[0;31m# along with this program. If not, see <http://www.gnu.org/licenses/>.[0m[0;34m[0m
+[0;34m[0m[0;34m"""[0m
+[0;34mGeneral utility functions and classes.[0m
+[0;34m"""[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;31m# pylint: disable=R0903[0m[0;34m[0m
+[0;34m[0m[0;31m# We implement minimal mixins[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;31m# pylint: disable=W0212[0m[0;34m[0m
+[0;34m[0m[0;31m# We implement an internal API[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;32mimport[0m [0mcontextlib[0m[0;34m[0m
+[0;34m[0m[0;32mimport[0m [0mfunctools[0m[0;34m[0m
+[0;34m[0m[0;32mimport[0m [0msys[0m[0;34m[0m
+[0;34m[0m[0;32mimport[0m [0mthreading[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;32mimport[0m [0msix[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;32mfrom[0m [0msix[0m[0;34m.[0m[0mmoves[0m [0;32mimport[0m [0mqueue[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;32mclass[0m [0mAbstractListener[0m[0;34m([0m[0mthreading[0m[0;34m.[0m[0mThread[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m    [0;34m"""A class implementing the basic behaviour for event listeners.[0m
+[0;34m[0m
+[0;34m    Instances of this class can be used as context managers. This is equivalent[0m
+[0;34m    to the following code::[0m
+[0;34m[0m
+[0;34m        listener.start()[0m
+[0;34m        listener.wait()[0m
+[0;34m        try:[0m
+[0;34m            with_statements()[0m
+[0;34m        finally:[0m
+[0;34m            listener.stop()[0m
+[0;34m[0m
+[0;34m    :param kwargs: A mapping from callback attribute to callback handler. All[0m
+[0;34m        handlers will be wrapped in a function reading the return value of the[0m
+[0;34m        callback, and if it ``is False``, raising :class:`StopException`.[0m
+[0;34m[0m
+[0;34m        Any callback that is falsy will be ignored.[0m
+[0;34m    """[0m[0;34m[0m
+[0;34m[0m    [0;32mclass[0m [0mStopException[0m[0;34m([0m[0mException[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""If an event listener callback raises this exception, the current[0m
+[0;34m        listener is stopped.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;32mpass[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;31m#: Exceptions that are handled outside of the emitter and should thus not be[0m[0;34m[0m
+[0;34m[0m    [0;31m#: passed through the queue[0m[0;34m[0m
+[0;34m[0m    [0m_HANDLED_EXCEPTIONS[0m [0;34m=[0m [0mtuple[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m__init__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0msuper[0m[0;34m([0m[0mAbstractListener[0m[0;34m,[0m [0mself[0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0;32mdef[0m [0mwrapper[0m[0;34m([0m[0mf[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0;32mdef[0m [0minner[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                [0;32mif[0m [0mf[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m)[0m [0;32mis[0m [0;32mFalse[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                    [0;32mraise[0m [0mself[0m[0;34m.[0m[0mStopException[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m            [0;32mreturn[0m [0minner[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_running[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_thread[0m [0;34m=[0m [0mthreading[0m[0;34m.[0m[0mcurrent_thread[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_condition[0m [0;34m=[0m [0mthreading[0m[0;34m.[0m[0mCondition[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_ready[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_queue[0m [0;34m=[0m [0mqueue[0m[0;34m.[0m[0mQueue[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0mdaemon[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0;32mfor[0m [0mname[0m[0;34m,[0m [0mcallback[0m [0;32min[0m [0mkwargs[0m[0;34m.[0m[0mitems[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0msetattr[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mname[0m[0;34m,[0m [0mwrapper[0m[0;34m([0m[0mcallback[0m [0;32mor[0m [0;34m([0m[0;32mlambda[0m [0;34m*[0m[0ma[0m[0;34m:[0m [0;32mNone[0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;34m@[0m[0mproperty[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0mrunning[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""Whether the listener is currently running.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_running[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0mstop[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""Stops listening for events.[0m
+[0;34m[0m
+[0;34m        When this method returns, no more events will be delivered.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;32mif[0m [0mself[0m[0;34m.[0m[0m_running[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0mself[0m[0;34m.[0m[0m_running[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m
+[0;34m[0m            [0mself[0m[0;34m.[0m[0m_stop[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m__enter__[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0mstart[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0mwait[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0;32mreturn[0m [0mself[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m__exit__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mexc_type[0m[0;34m,[0m [0mvalue[0m[0;34m,[0m [0mtraceback[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0mstop[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0mwait[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""Waits for this listener to become ready.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_condition[0m[0;34m.[0m[0macquire[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0;32mwhile[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_ready[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0mself[0m[0;34m.[0m[0m_condition[0m[0;34m.[0m[0mwait[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_condition[0m[0;34m.[0m[0mrelease[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0mrun[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""The thread runner method.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_running[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_thread[0m [0;34m=[0m [0mthreading[0m[0;34m.[0m[0mcurrent_thread[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_run[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0;31m# Make sure that the queue contains something[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_queue[0m[0;34m.[0m[0mput[0m[0;34m([0m[0;32mNone[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;34m@[0m[0mclassmethod[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_emitter[0m[0;34m([0m[0mcls[0m[0;34m,[0m [0mf[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""A decorator to mark a method as the one emitting the callbacks.[0m
+[0;34m[0m
+[0;34m        This decorator will wrap the method and catch exception. If a[0m
+[0;34m        :class:`StopException` is caught, the listener will be stopped[0m
+[0;34m        gracefully. If any other exception is caught, it will be propagated to[0m
+[0;34m        the thread calling :meth:`join` and reraised there.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;34m@[0m[0mfunctools[0m[0;34m.[0m[0mwraps[0m[0;34m([0m[0mf[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0;32mdef[0m [0minner[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0;31m# pylint: disable=W0702; we want to catch all exception[0m[0;34m[0m
+[0;34m[0m            [0;32mtry[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                [0;32mreturn[0m [0mf[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m            [0;32mexcept[0m [0mException[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                [0;32mif[0m [0;32mnot[0m [0misinstance[0m[0;34m([0m[0me[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0m_HANDLED_EXCEPTIONS[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                    [0mself[0m[0;34m.[0m[0m_queue[0m[0;34m.[0m[0mput[0m[0;34m([0m[0;34m[0m
+[0;34m[0m                        [0;32mNone[0m [0;32mif[0m [0misinstance[0m[0;34m([0m[0me[0m[0;34m,[0m [0mcls[0m[0;34m.[0m[0mStopException[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m                        [0;32melse[0m [0msys[0m[0;34m.[0m[0mexc_info[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m                    [0mself[0m[0;34m.[0m[0mstop[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m                [0;32mraise[0m[0;34m[0m
+[0;34m[0m            [0;31m# pylint: enable=W0702[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0;32mreturn[0m [0minner[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_mark_ready[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""Marks this listener as ready to receive events.[0m
+[0;34m[0m
+[0;34m        This method must be called from :meth:`_run`. :meth:`wait` will block[0m
+[0;34m        until this method is called.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_condition[0m[0;34m.[0m[0macquire[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_ready[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_condition[0m[0;34m.[0m[0mnotify[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0mself[0m[0;34m.[0m[0m_condition[0m[0;34m.[0m[0mrelease[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_run[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""The implementation of the :meth:`run` method.[0m
+[0;34m[0m
+[0;34m        This is a platform dependent implementation.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;32mraise[0m [0mNotImplementedError[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_stop[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""The implementation of the :meth:`stop` method.[0m
+[0;34m[0m
+[0;34m        This is a platform dependent implementation.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;32mraise[0m [0mNotImplementedError[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0mjoin[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0msuper[0m[0;34m([0m[0mAbstractListener[0m[0;34m,[0m [0mself[0m[0;34m)[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0;31m# Reraise any exceptions[0m[0;34m[0m
+[0;34m[0m        [0;32mtry[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0mexc_type[0m[0;34m,[0m [0mexc_value[0m[0;34m,[0m [0mexc_traceback[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_queue[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0;32mexcept[0m [0mTypeError[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0;32mreturn[0m[0;34m[0m
+[0;34m[0m        [0msix[0m[0;34m.[0m[0mreraise[0m[0;34m([0m[0mexc_type[0m[0;34m,[0m [0mexc_value[0m[0;34m,[0m [0mexc_traceback[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m[0;32mclass[0m [0mNotifierMixin[0m[0;34m([0m[0mobject[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m    [0;34m"""A mixin for notifiers of fake events.[0m
+[0;34m[0m
+[0;34m    This mixin can be used for controllers on platforms where sending fake[0m
+[0;34m    events does not cause a listener to receive a notification.[0m
+[0;34m    """[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_emit[0m[0;34m([0m[0mself[0m[0;34m,[0m [0maction[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""Sends a notification to all registered listeners.[0m
+[0;34m[0m
+[0;34m        This method will ensure that listeners that raise[0m
+[0;34m        :class:`StopException` are stopped.[0m
+[0;34m[0m
+[0;34m        :param str action: The name of the notification.[0m
+[0;34m[0m
+[0;34m        :param args: The arguments to pass.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0mstopped[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m
+[0;34m[0m        [0;32mfor[0m [0mlistener[0m [0;32min[0m [0mself[0m[0;34m.[0m[0m_listeners[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0;32mtry[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                [0mgetattr[0m[0;34m([0m[0mlistener[0m[0;34m,[0m [0maction[0m[0;34m)[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m            [0;32mexcept[0m [0mlistener[0m[0;34m.[0m[0mStopException[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                [0mstopped[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mlistener[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m        [0;32mfor[0m [0mlistener[0m [0;32min[0m [0mstopped[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0mlistener[0m[0;34m.[0m[0mstop[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;34m@[0m[0mclassmethod[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_receiver[0m[0;34m([0m[0mcls[0m[0;34m,[0m [0mlistener_class[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""A decorator to make a class able to receive fake events from a[0m
+[0;34m        controller.[0m
+[0;34m[0m
+[0;34m        This decorator will add the method ``_receive`` to the decorated class.[0m
+[0;34m[0m
+[0;34m        This method is a context manager which ensures that all calls to[0m
+[0;34m        :meth:`_emit` will invoke the named method in the listener instance[0m
+[0;34m        while the block is active.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;34m@[0m[0mcontextlib[0m[0;34m.[0m[0mcontextmanager[0m[0;34m[0m
+[0;34m[0m        [0;32mdef[0m [0mreceive[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0;34m"""Executes a code block with this listener instance registered as[0m
+[0;34m            a receiver of fake input events.[0m
+[0;34m            """[0m[0;34m[0m
+[0;34m[0m            [0mself[0m[0;34m.[0m[0m_controller_class[0m[0;34m.[0m[0m_add_listener[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m            [0;32mtry[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                [0;32myield[0m[0;34m[0m
+[0;34m[0m            [0;32mfinally[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                [0mself[0m[0;34m.[0m[0m_controller_class[0m[0;34m.[0m[0m_remove_listener[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0mlistener_class[0m[0;34m.[0m[0m_receive[0m [0;34m=[0m [0mreceive[0m[0;34m[0m
+[0;34m[0m        [0mlistener_class[0m[0;34m.[0m[0m_controller_class[0m [0;34m=[0m [0mcls[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0;31m# Make sure this class has the necessary attributes[0m[0;34m[0m
+[0;34m[0m        [0;32mif[0m [0;32mnot[0m [0mhasattr[0m[0;34m([0m[0mcls[0m[0;34m,[0m [0;34m'_listener_cache'[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0mcls[0m[0;34m.[0m[0m_listener_cache[0m [0;34m=[0m [0mset[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m            [0mcls[0m[0;34m.[0m[0m_listener_lock[0m [0;34m=[0m [0mthreading[0m[0;34m.[0m[0mLock[0m[0;34m([0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m        [0;32mreturn[0m [0mlistener_class[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;34m@[0m[0mclassmethod[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_listeners[0m[0;34m([0m[0mcls[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""Iterates over the set of running listeners.[0m
+[0;34m[0m
+[0;34m        This method will quit without acquiring the lock if the set is empty,[0m
+[0;34m        so there is potential for race conditions. This is an optimisation,[0m
+[0;34m        since :class:`Controller` will need to call this method for every[0m
+[0;34m        control event.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;32mif[0m [0;32mnot[0m [0mcls[0m[0;34m.[0m[0m_listener_cache[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0;32mreturn[0m[0;34m[0m
+[0;34m[0m        [0;32mwith[0m [0mcls[0m[0;34m.[0m[0m_listener_lock[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0;32mfor[0m [0mlistener[0m [0;32min[0m [0mcls[0m[0;34m.[0m[0m_listener_cache[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m                [0;32myield[0m [0mlistener[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;34m@[0m[0mclassmethod[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_add_listener[0m[0;34m([0m[0mcls[0m[0;34m,[0m [0mlistener[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""Adds a listener to the set of running listeners.[0m
+[0;34m[0m
+[0;34m        :param listener: The listener for fake events.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;32mwith[0m [0mcls[0m[0;34m.[0m[0m_listener_lock[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0mcls[0m[0;34m.[0m[0m_listener_cache[0m[0;34m.[0m[0madd[0m[0;34m([0m[0mlistener[0m[0;34m)[0m[0;34m[0m
+[0;34m[0m[0;34m[0m
+[0;34m[0m    [0;34m@[0m[0mclassmethod[0m[0;34m[0m
+[0;34m[0m    [0;32mdef[0m [0m_remove_listener[0m[0;34m([0m[0mcls[0m[0;34m,[0m [0mlistener[0m[0;34m)[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m        [0;34m"""Removes this listener from the set of running listeners.[0m
+[0;34m[0m
+[0;34m        :param listener: The listener for fake events.[0m
+[0;34m        """[0m[0;34m[0m
+[0;34m[0m        [0;32mwith[0m [0mcls[0m[0;34m.[0m[0m_listener_lock[0m[0;34m:[0m[0;34m[0m
+[0;34m[0m            [0mcls[0m[0;34m.[0m[0m_listener_cache[0m[0;34m.[0m[0mremove[0m[0;34m([0m[0mlistener[0m[0;34m)[0m[0;34m[0m[0m

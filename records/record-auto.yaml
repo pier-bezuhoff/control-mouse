@@ -1,0 +1,274 @@
+- {action: wait, time: 1.7366942490007204}
+- {action: key, key: Key.alt, pressed: true}
+- {action: wait, time: 0.19982382499983942}
+- {action: key, key: Key.right, pressed: true}
+- {action: wait, time: 0.1339271020005981}
+- {action: key, key: Key.right, pressed: false}
+- {action: wait, time: 0.6680132239998784}
+- {action: key, key: Key.left, pressed: true}
+- {action: wait, time: 0.12730688900046516}
+- {action: key, key: Key.left, pressed: false}
+- {action: wait, time: 0.456632659999741}
+- {action: key, key: Key.alt, pressed: false}
+- {action: wait, time: 2.9547053089991095}
+- {action: key, key: Key.alt, pressed: true}
+- {action: wait, time: 0.13161594200028048}
+- {action: key, key: Key.alt, pressed: false}
+- {action: wait, time: 2.2671803699995507}
+- {action: motion, x: 942, y: 307}
+- {action: wait, time: 0.020515682001132518}
+- {action: motion, x: 929, y: 301}
+- {action: wait, time: 0.08207508699888422}
+- {action: motion, x: 915, y: 295}
+- {action: wait, time: 0.020771120000063092}
+- {action: motion, x: 906, y: 289}
+- {action: wait, time: 0.020679975001257844}
+- {action: motion, x: 895, y: 282}
+- {action: wait, time: 0.020643608999307617}
+- {action: motion, x: 883, y: 275}
+- {action: wait, time: 0.020534360000965535}
+- {action: motion, x: 874, y: 269}
+- {action: wait, time: 0.03063533299973642}
+- {action: motion, x: 864, y: 262}
+- {action: wait, time: 0.02063284699943324}
+- {action: motion, x: 862, y: 260}
+- {action: wait, time: 0.020511680999334203}
+- {action: motion, x: 861, y: 260}
+- {action: wait, time: 0.020332158001110656}
+- {action: motion, x: 861, y: 258}
+- {action: wait, time: 0.016392785999414627}
+- {action: motion, x: 867, y: 276}
+- {action: wait, time: 0.26409798500026227}
+- {action: motion, x: 858, y: 275}
+- {action: wait, time: 0.01325071300016134}
+- {action: motion, x: 822, y: 261}
+- {action: wait, time: 0.019866869999532355}
+- {action: motion, x: 758, y: 230}
+- {action: wait, time: 0.005311909000738524}
+- {action: motion, x: 691, y: 205}
+- {action: wait, time: 0.014376166998772533}
+- {action: motion, x: 638, y: 188}
+- {action: wait, time: 0.01041111500126135}
+- {action: motion, x: 591, y: 171}
+- {action: wait, time: 0.01043719900008}
+- {action: motion, x: 553, y: 159}
+- {action: wait, time: 0.010414885999125545}
+- {action: motion, x: 521, y: 151}
+- {action: wait, time: 0.01052356900072482}
+- {action: motion, x: 495, y: 142}
+- {action: wait, time: 0.010607394999169628}
+- {action: motion, x: 471, y: 138}
+- {action: wait, time: 0.010450093999679666}
+- {action: motion, x: 450, y: 131}
+- {action: wait, time: 0.00020162100008747075}
+- {action: motion, x: 436, y: 131}
+- {action: wait, time: 0.015659704000427155}
+- {action: motion, x: 426, y: 128}
+- {action: wait, time: 0.01040643399937835}
+- {action: motion, x: 420, y: 128}
+- {action: wait, time: 0.010539417000472895}
+- {action: motion, x: 413, y: 126}
+- {action: wait, time: 0.01056220700047561}
+- {action: motion, x: 412, y: 125}
+- {action: wait, time: 0.017788003000532626}
+- {action: motion, x: 412, y: 125}
+- {action: wait, time: 0.005478040999150835}
+- {action: motion, x: 412, y: 125}
+- {action: wait, time: 0.01444528300089587}
+- {action: motion, x: 412, y: 124}
+- {action: wait, time: 0.010561995999523788}
+- {action: motion, x: 409, y: 124}
+- {action: wait, time: 0.03888069399909}
+- {action: motion, x: 414, y: 124}
+- {action: wait, time: 0.010575412999969558}
+- {action: motion, x: 414, y: 130}
+- {action: wait, time: 0.31484571600049094}
+- {action: motion, x: 416, y: 130}
+- {action: wait, time: 0.010423150000860915}
+- {action: motion, x: 416, y: 130}
+- {action: wait, time: 0.010407445999589982}
+- {action: motion, x: 416, y: 129}
+- {action: wait, time: 0.010420410999358865}
+- {action: motion, x: 416, y: 127}
+- {action: wait, time: 0.010548706000918173}
+- {action: motion, x: 416, y: 125}
+- {action: wait, time: 0.0054922829986026045}
+- {action: motion, x: 411, y: 123}
+- {action: wait, time: 0.012417208999977447}
+- {action: motion, x: 400, y: 119}
+- {action: wait, time: 0.005506531000719406}
+- {action: motion, x: 379, y: 111}
+- {action: wait, time: 0.014330320000226493}
+- {action: motion, x: 358, y: 105}
+- {action: wait, time: 0.005523248999452335}
+- {action: motion, x: 338, y: 96}
+- {action: wait, time: 0.014261561000239453}
+- {action: motion, x: 319, y: 89}
+- {action: wait, time: 0.0052851029995508725}
+- {action: motion, x: 300, y: 82}
+- {action: wait, time: 0.014416309000807814}
+- {action: motion, x: 283, y: 78}
+- {action: wait, time: 0.005285896999339457}
+- {action: motion, x: 268, y: 70}
+- {action: wait, time: 0.014483982000456308}
+- {action: motion, x: 257, y: 60}
+- {action: wait, time: 0.005299234999256441}
+- {action: motion, x: 248, y: 54}
+- {action: wait, time: 0.014561844000127167}
+- {action: motion, x: 239, y: 45}
+- {action: wait, time: 0.01038099300058093}
+- {action: motion, x: 234, y: 44}
+- {action: wait, time: 0.00527683799919032}
+- {action: motion, x: 228, y: 33}
+- {action: wait, time: 0.014104591000432265}
+- {action: motion, x: 223, y: 33}
+- {action: wait, time: 0.005487006001203554}
+- {action: motion, x: 220, y: 33}
+- {action: wait, time: 0.014169632999255555}
+- {action: motion, x: 218, y: 33}
+- {action: wait, time: 0.0052957419993617805}
+- {action: motion, x: 217, y: 32}
+- {action: wait, time: 0.015188458000920946}
+- {action: motion, x: 216, y: 30}
+- {action: wait, time: 0.005279891000100179}
+- {action: motion, x: 215, y: 30}
+- {action: wait, time: 0.013606553999125026}
+- {action: motion, x: 215, y: 30}
+- {action: wait, time: 0.01988918300048681}
+- {action: motion, x: 214, y: 30}
+- {action: wait, time: 0.010461171999850194}
+- {action: motion, x: 213, y: 29}
+- {action: wait, time: 0.010671275000277092}
+- {action: motion, x: 213, y: 29}
+- {action: wait, time: 0.010556605999227031}
+- {action: motion, x: 213, y: 28}
+- {action: wait, time: 0.010382276001109858}
+- {action: motion, x: 212, y: 28}
+- {action: wait, time: 0.011229960999116884}
+- {action: motion, x: 212, y: 28}
+- {action: wait, time: 0.0053093710012035444}
+- {action: motion, x: 212, y: 26}
+- {action: wait, time: 0.02078741699915554}
+- {action: motion, x: 212, y: 26}
+- {action: wait, time: 0.010390625000582077}
+- {action: motion, x: 212, y: 26}
+- {action: wait, time: 0.005283972999677644}
+- {action: motion, x: 212, y: 24}
+- {action: wait, time: 0.06260551100058365}
+- {action: motion, x: 212, y: 24}
+- {action: wait, time: 0.02944556699912937}
+- {action: motion, x: 209, y: 24}
+- {action: wait, time: 0.020193447000565357}
+- {action: motion, x: 209, y: 23}
+- {action: wait, time: 0.019384778999665286}
+- {action: motion, x: 209, y: 22}
+- {action: wait, time: 0.02018818099895725}
+- {action: motion, x: 209, y: 21}
+- {action: wait, time: 0.266189915000723}
+- {action: motion, x: 209, y: 21}
+- {action: wait, time: 0.019704317999639898}
+- {action: motion, x: 211, y: 21}
+- {action: wait, time: 0.2562805500001559}
+- {action: motion, x: 212, y: 21}
+- {action: wait, time: 0.4307776460009336}
+- {action: mouse, button: Button.left, pressed: true, x: 212, y: 21}
+- {action: wait, time: 0.01401266899847542}
+- {action: mouse, button: Button.left, pressed: false, x: 212, y: 21}
+- {action: wait, time: 0.5132286170010047}
+- {action: motion, x: 212, y: 22}
+- {action: wait, time: 0.010388638000222272}
+- {action: motion, x: 212, y: 23}
+- {action: wait, time: 0.02479949500047951}
+- {action: motion, x: 218, y: 26}
+- {action: wait, time: 0.010696915998778422}
+- {action: motion, x: 220, y: 28}
+- {action: wait, time: 0.010750925001048017}
+- {action: motion, x: 233, y: 39}
+- {action: wait, time: 0.0003227219986001728}
+- {action: motion, x: 243, y: 51}
+- {action: wait, time: 0.007705171999987215}
+- {action: motion, x: 255, y: 57}
+- {action: wait, time: 0.01478709399998479}
+- {action: motion, x: 262, y: 70}
+- {action: wait, time: 0.0003872900015267078}
+- {action: motion, x: 272, y: 75}
+- {action: wait, time: 0.014421146999666234}
+- {action: motion, x: 282, y: 82}
+- {action: wait, time: 0.010188934998950572}
+- {action: motion, x: 285, y: 87}
+- {action: wait, time: 0.028916267001477536}
+- {action: motion, x: 287, y: 89}
+- {action: wait, time: 0.005295932998706121}
+- {action: motion, x: 287, y: 91}
+- {action: wait, time: 0.01137118500082579}
+- {action: motion, x: 288, y: 94}
+- {action: wait, time: 0.010431844999402529}
+- {action: motion, x: 291, y: 95}
+- {action: wait, time: 0.010567818999334122}
+- {action: motion, x: 291, y: 95}
+- {action: wait, time: 0.017500723000921425}
+- {action: motion, x: 293, y: 95}
+- {action: wait, time: 0.028818370999943}
+- {action: motion, x: 293, y: 96}
+- {action: wait, time: 0.039951438000571216}
+- {action: motion, x: 290, y: 96}
+- {action: wait, time: 0.005310946999088628}
+- {action: motion, x: 286, y: 96}
+- {action: wait, time: 0.034102822000932065}
+- {action: motion, x: 286, y: 95}
+- {action: wait, time: 0.005296604000250227}
+- {action: motion, x: 286, y: 94}
+- {action: wait, time: 0.0144651979990158}
+- {action: motion, x: 286, y: 94}
+- {action: wait, time: 0.005324425999788218}
+- {action: motion, x: 286, y: 93}
+- {action: wait, time: 0.014198646000295412}
+- {action: motion, x: 286, y: 91}
+- {action: wait, time: 0.0006664840002486017}
+- {action: motion, x: 285, y: 91}
+- {action: wait, time: 0.019589457000620314}
+- {action: motion, x: 282, y: 89}
+- {action: wait, time: 0.005285194998577936}
+- {action: motion, x: 280, y: 87}
+- {action: wait, time: 0.014141925999865634}
+- {action: motion, x: 280, y: 86}
+- {action: wait, time: 0.00528464400122175}
+- {action: motion, x: 278, y: 83}
+- {action: wait, time: 0.014808813999479753}
+- {action: motion, x: 274, y: 81}
+- {action: wait, time: 0.005438377000245964}
+- {action: motion, x: 272, y: 79}
+- {action: wait, time: 0.013877678999051568}
+- {action: motion, x: 271, y: 78}
+- {action: wait, time: 0.010400803001175518}
+- {action: motion, x: 271, y: 78}
+- {action: wait, time: 0.010428309000417357}
+- {action: motion, x: 271, y: 77}
+- {action: wait, time: 0.010369235998950899}
+- {action: motion, x: 271, y: 77}
+- {action: wait, time: 0.05845820600006846}
+- {action: motion, x: 271, y: 75}
+- {action: wait, time: 0.010645763999491464}
+- {action: motion, x: 278, y: 76}
+- {action: wait, time: 0.01061360400126432}
+- {action: motion, x: 286, y: 76}
+- {action: wait, time: 0.011288501000308315}
+- {action: motion, x: 299, y: 96}
+- {action: wait, time: 0.010991311999532627}
+- {action: motion, x: 333, y: 124}
+- {action: wait, time: 0.000322713998684776}
+- {action: motion, x: 362, y: 150}
+- {action: wait, time: 0.12337098800162494}
+- {action: motion, x: 387, y: 179}
+- {action: wait, time: 0.016591178999078693}
+- {action: motion, x: 395, y: 187}
+- {action: wait, time: 0.01973054300106014}
+- {action: motion, x: 404, y: 197}
+- {action: wait, time: 0.025072313999771723}
+- {action: motion, x: 411, y: 205}
+- {action: wait, time: 0.015212725998935639}
+- {action: motion, x: 413, y: 207}
+- {action: wait, time: 0.025667711999631138}
+- {action: motion, x: 415, y: 208}
+- {action: wait, time: 0.0169818230006058}
+- {action: motion, x: 416, y: 208}

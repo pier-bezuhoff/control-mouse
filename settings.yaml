@@ -1,0 +1,45 @@
+options:
+  record-directory: records
+  record-extension: .yaml
+  sequence-directory: sequences
+  sequence-extension: .yaml
+  record-motion: yes
+  record-scrolling: yes
+  record-keyboard: yes
+  autosave: yes
+  autosave-record-name: record-auto
+  autosave-sequence-name: sequence-auto
+  modifiers:
+    - [ctrl, ctrl_r] # all means 'ctrl'
+    - [alt, alt_r, alt_gr] # all means 'alt'
+    - [shift, shift_r] # all means 'shift'
+    - [cmd, cmd_r] # all means 'cmd'/'win'/'super'
+  keyboard-echo: yes
+shortcuts:
+  quit: ctrl-esc
+  help: ctrl-h
+  about: ctrl-@
+  record:
+    open: ctrl-o
+    open-last: ctrl-l
+    save: ctrl-s
+  sequence:
+    new: ctrl-N
+    open: ctrl-O
+    open-last: ctrl-L
+    save: ctrl-S
+  recording:
+    start: ctrl-[
+    pause: ctrl-space
+    resume: ctrl-space
+    stop: ctrl-]
+    quit: ctrl-esc
+  playing:
+    start: ctrl-enter
+    pause: ctrl-space
+    resume: ctrl-space
+    stop: ctrl-esc
+    
+    no-wait: ctrl-0
+    skip: ctrl->
+    repeat: ctrl-<

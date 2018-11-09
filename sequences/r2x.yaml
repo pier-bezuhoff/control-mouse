@@ -1,0 +1,4 @@
+- {path: /home/vanfed/Documents/Python/python3/control_mouse/records/record-auto.yaml,
+  repeat: 2.5s, speed: "\u221E"}
+- {path: /home/vanfed/Documents/Python/python3/control_mouse/records/record-auto.yaml,
+  repeat: 1.6, speed: 1.0e-05}

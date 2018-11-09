@@ -1,0 +1,250 @@
+#:kivy 1.10.0
+#:import settings control_mouse.settings
+#:import formats control_mouse.formats
+#:import cm control_mouse.main
+
+<OpenFileDialog>:
+    default_path: settings.parent_directory
+    open_callback: print
+    selected: filechooser.selection[0] if filechooser.selection else None
+    on_open: self.focus = True
+    BoxLayout:
+        orientation: 'vertical'
+        FileChooserListView:
+            id: filechooser
+            path: root.default_path
+        BoxLayout:
+            size_hint_y: None
+            height: '30dp'
+            Button:
+                text: "Cancel"
+                on_release: root.dismiss()
+            Button:
+                id: open
+                text: "Open"
+                disabled: not filechooser.selection
+                on_release: root.open_callback(filechooser.selection[0])
+                
+<Row>:
+    number: 0
+    canvas.before:
+        Color:
+            rgba: 0.4, 0.4, 0.4, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    size_hint_y: None
+    height: '30dp'
+    Label:
+        text: str(root.number + 1) 
+    Button:
+        id: record
+        text: root.name
+        on_release: app.to_record(root.record)
+    TextInput:
+        id: repeat
+        multiline: False
+        text: root.repeat
+        on_focus: if not args[1]: root.repeat = self.text
+        write_tab: False
+    TextInput:
+        id: speed
+        multiline: False
+        text: root.speed
+        on_focus: if not args[1]: root.speed = self.text
+        write_tab: False
+    CheckBox:
+        id: select
+
+<Table>:
+    orientation: 'vertical'
+    size_hint_y: None
+    size: self.minimum_size
+    
+Interface:
+    TabbedPanel:
+        id: tabbed_panel
+        tab_pos: 'top_left'
+        tab_width: root.width / len(self.tab_list)
+        do_default_tab: False
+
+        TabbedPanelItem:
+            id: record_tab
+            text: "Record"
+            BoxLayout:
+                orientation: 'vertical'
+                FloatLayout:
+                    size_hint_y: None
+                    height: '50dp'
+                    Bubble:
+                        pos_hint: {'top': 1}
+                        arrow_pos: 'top_left'
+                        show_arrow: False
+                        BubbleButton:
+                            text: "New"
+                            on_release: app.new_record()
+                        BubbleButton:
+                            text: "Open"
+                            on_release: app.open_record()
+                        BubbleButton:
+                            text: "Open last"
+                            on_release: app.open_last_record()
+                        BubbleButton:
+                            text: "Save"
+                            disabled: not app.record
+                            on_release: app.save_record(name=record_name_input.text)
+                    Bubble:
+                        size_hint_x: None
+                        width: '30dp'
+                        pos_hint: {'center_x': 0.125, 'top': 1}
+                        arrow_pos: 'top_mid'
+                        on_parent: self.content.opacity = 0
+                BoxLayout:
+                    size_hint_y: None
+                    height: '40dp'
+                    Label:
+                        text: "Record filename:"
+                    TextInput:
+                        id: record_name_input
+                        multiline: False
+                        text: app.record.name if app.record and app.record.name else ""
+                        disabled: not app.record
+                BoxLayout:
+                BoxLayout:
+                    size_hint_y: None
+                    height: '70dp'
+                    Label:
+                        text: "" if not app.record else "{} / {} ({}%)".format(formats.pretty_dt(slider.value * app.record.duration / 100), formats.pretty_dt(app.record.duration), slider.value)
+                        disabled: not app.record
+                    Slider:
+                        cursor_size: 20, 20
+                        id: slider
+                        disabled: not app.record
+                        value: 0
+                        max: 100
+                        step: 1
+                BoxLayout:
+                    size_hint_y: None
+                    height: '40dp'
+                    Button:
+                        id: listen_record
+                        status: 'off'
+                        size_hint_x: None
+                        width: '50dp'
+                        text: {'off': "?>", 'pause': "...?>", 'on': "?||"}[self.status]
+                        on_release: {'off': app.start_recording, 'pause': app.resume_recording, 'on': app.pause_recording}[self.status]()
+                    Button:
+                        text: "?[]"
+                        size_hint_x: None
+                        width: '50dp'
+                        disabled: listen_record.status == 'off'
+                        on_release: app.end_recording()
+                    Button:
+                        id: play_record
+                        status: 'off'
+                        size_hint_x: None
+                        width: '50dp'
+                        text: {'off': "|>", 'pause': "...|>", 'on': "||"}[self.status]
+                        on_release: {'off': app.play_record, 'pause': app.resume_playing_record, 'on': app.pause_playing_record}[self.status]()
+                    Button:
+                        size_hint_x: None
+                        width: '50dp'
+                        text: "[]"
+                        disabled: play_record.status == 'off'
+                        on_release: app.stop_playing_record()
+
+        TabbedPanelItem:
+            id: sequence_tab
+            text: "Sequence"
+            BoxLayout:
+                orientation: 'vertical'
+                FloatLayout:
+                    size_hint_y: None
+                    height: '50dp'
+                    Bubble:
+                        pos_hint: {'top': 1}
+                        arrow_pos: 'top_mid'
+                        show_arrow: False
+                        BubbleButton:
+                            text: "New"
+                            on_release: app.new_sequence()
+                        BubbleButton:
+                            text: "Open"
+                            on_release: app.open_sequence()
+                        BubbleButton:
+                            text: "Open last"
+                            on_release: app.open_last_sequence()
+                        BubbleButton:
+                            text: "Save"
+                            disabled: not app.sequence
+                            on_release: app.sequence.save(name=sequence_name_input.text)
+                    Bubble:
+                        size_hint_x: None
+                        width: '30dp'
+                        pos_hint: {'center_x': 0.375, 'top': 1}
+                        arrow_pos: 'top_mid'
+                        on_parent: self.content.opacity = 0
+                BoxLayout:
+                    size_hint_y: None
+                    height: '40dp'
+                    Label:
+                        text: "Sequence filename:"
+                    TextInput:
+                        id: sequence_name_input
+                        multiline: False
+                        text: app.sequence.name if app.sequence and app.sequence.name else ""
+                        disabled: not app.sequence
+                BoxLayout:
+                    canvas.before:
+                        Color:
+                            rgba: 0.1, 0.1, 0.1, 1
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    orientation: 'vertical'
+                    size_hint_x: 0.5
+                    pos_hint: {'right': 1}
+                    BoxLayout:
+                        size_hint_y: None
+                        height: '50dp'
+                        Label:
+                            text: "#"
+                        Label:
+                            text: "Record name"
+                        Label:
+                            text: "Repeat"
+                        Label:
+                            text: "Speed"
+                        CheckBox:
+                            on_active: table.on_select_all_records(args[1])
+                    Table:
+                        id: table
+                        sequence: app.sequence
+                    BoxLayout:
+                BoxLayout:
+                    size_hint_y: None
+                    height: '40dp'
+                    Button:
+                        size_hint_x: None
+                        width: '50dp'
+                        text: ">"
+                    Button:
+                        size_hint_x: None
+                        width: '50dp'
+                        text: "[]"
+                        disabled: True
+
+        TabbedPanelItem:
+            text: "Settings"
+            Label:
+                text: "ss"
+
+        TabbedPanelItem:
+            text: "Help"
+            BoxLayout:
+                Label:
+                    text: "h"
+                Button:
+                    id: debug
+                    text: "Debug"
+                    on_release: app.debug()

@@ -1,0 +1,60 @@
+import yaml
+import os.path as op
+from pynput.keyboard import Key, KeyCode
+
+parent_directory = op.abspath(op.split(__file__)[0])
+settings_file = op.join(parent_directory, "settings.yaml")
+
+
+class Settings:
+    def __init__(self, filename):
+        self._filename = filename
+        with open(filename) as file:
+            self._tree = yaml.load(file)
+
+    def __repr__(self):
+        return "Settings('{}')".format(self._filename)
+
+    def __getattr__(self, name):
+        node = self._tree[name.replace('_', '-')]
+        if not isinstance(node, dict):
+            return node
+        else:
+            return Node(name, node)
+
+    @property
+    def shortcuts_node(self):
+        return Node('shortcuts', self._tree['shortcuts'], callback=shortcut)
+
+
+class Node:
+    def __init__(self, name, tree, callback=lambda x: x):
+        self._name = name
+        self._tree = tree
+        self._callback = callback
+
+    def __repr__(self):
+        return "Node('{}', {})".format(self._name, self._tree)
+
+    def __getattr__(self, name):
+        node = self._tree[name.replace('_', '-')]
+        if not isinstance(node, dict):
+            return self._callback(node)
+        else:
+            return Node(name, node, callback=self._callback)
+
+
+def shortcut(s):
+    if s.endswith('-'):
+        s = s[:-2]
+        key = KeyCode.from_char('-')
+    else:
+        s = s.rsplit('-', maxsplit=1)
+        s, key = s[:-1], s[-1]
+        key = getattr(Key, key, KeyCode.from_char(key))
+    return tuple(getattr(Key, k) for k in s.split('-')) + (key,)
+
+
+settings = Settings(settings_file)
+options = settings.options
+shortcuts = settings.shortcuts_node
